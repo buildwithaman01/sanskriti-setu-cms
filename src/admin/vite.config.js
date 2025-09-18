@@ -1,9 +1,9 @@
-const { mergeConfig } = require('vite');
+import { mergeConfig } from 'vite';
 
-module.exports = (config) => {
+export default (config) => {
   return mergeConfig(config, {
     server: {
-      allowedHosts: ['sanskriti-setu-cms.onrender.com'],
+      allowedHosts: ['sanskriti-setu-cms.onrender.com', 'sanskriti-setu-cms-v2.onrender.com'],
     },
   });
 };
