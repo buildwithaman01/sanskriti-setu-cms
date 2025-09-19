@@ -1,0 +1,86 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cultures",
+  "info": {
+    "singularName": "culture",
+    "pluralName": "cultures",
+    "displayName": "Culture",
+    "description": "Cultural practices, traditions, and customs"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "description": {
+      "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "festival",
+        "ritual",
+        "dance",
+        "music",
+        "art",
+        "craft",
+        "cuisine",
+        "language",
+        "tradition",
+        "ceremony",
+        "other"
+      ]
+    },
+    "region": {
+      "type": "string"
+    },
+    "community": {
+      "type": "string"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "videos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["videos"]
+    },
+    "historical_background": {
+      "type": "text"
+    },
+    "significance": {
+      "type": "text"
+    },
+    "practices": {
+      "type": "text"
+    },
+    "season": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "participants": {
+      "type": "string"
+    },
+    "materials_used": {
+      "type": "text"
+    },
+    "tags": {
+      "type": "json"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

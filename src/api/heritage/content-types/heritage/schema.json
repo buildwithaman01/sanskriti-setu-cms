@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "heritages",
+  "info": {
+    "singularName": "heritage",
+    "pluralName": "heritages",
+    "displayName": "Heritage",
+    "description": "Cultural heritage items and sites"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "description": {
+      "type": "text"
+    },
+    "location": {
+      "type": "string"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "monument",
+        "temple",
+        "fort",
+        "palace",
+        "museum",
+        "cultural_site",
+        "traditional_art",
+        "festival",
+        "other"
+      ]
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "historical_period": {
+      "type": "string"
+    },
+    "significance": {
+      "type": "text"
+    },
+    "visiting_hours": {
+      "type": "string"
+    },
+    "entry_fee": {
+      "type": "decimal"
+    },
+    "contact_info": {
+      "type": "string"
+    },
+    "coordinates": {
+      "type": "json"
+    },
+    "tags": {
+      "type": "json"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
