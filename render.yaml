@@ -1,0 +1,54 @@
+services:
+  - type: web
+    name: sanskriti-setu-cms
+    env: node
+    plan: starter
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 10000
+      - key: APP_KEYS
+        value: ehhEak43C+3SOPomw/fUD2XU26mFaIAg1xB43D9VXsE=,fZQku86mxifYPQEB8jXKLgdAAE/fBe6m3bagJosGSm0=,vPKZqFhtnw+U0oHW+d2GYzruPTnTPXlsCQkcQPoJDPU=,upcLZMUMdcXkAUEtrxp0C/Ej/wPi322Ldw3wvcuXXms=
+      - key: API_TOKEN_SALT
+        value: 1EmcdGF3cXzguUhWjDqrAA==
+      - key: ADMIN_JWT_SECRET
+        value: egw+p/b/GQyZweVntKJTDyBS/rczaU1pQ612bwNsB1c=
+      - key: JWT_SECRET
+        value: mXu+w2ajHii9qAO7yCPlAlSxcY2eT7EpITXhGznPIW4=
+      - key: TRANSFER_TOKEN_SALT
+        value: e4czAPxSLjzKCV4U+QbjBA==
+      - key: ENCRYPTION_KEY
+        value: OhlQWMCAvQXcOwNv9rxn5feRH6HQ0rDKSZ9Nn/4v+gg=
+      - key: DATABASE_CLIENT
+        value: postgres
+      - key: DATABASE_HOST
+        fromDatabase:
+          name: sanskriti-setu-db
+          property: host
+      - key: DATABASE_PORT
+        fromDatabase:
+          name: sanskriti-setu-db
+          property: port
+      - key: DATABASE_NAME
+        fromDatabase:
+          name: sanskriti-setu-db
+          property: database
+      - key: DATABASE_USERNAME
+        fromDatabase:
+          name: sanskriti-setu-db
+          property: user
+      - key: DATABASE_PASSWORD
+        fromDatabase:
+          name: sanskriti-setu-db
+          property: password
+      - key: DATABASE_SSL
+        value: true
+
+databases:
+  - name: sanskriti-setu-db
+    plan: starter
